@@ -117,7 +117,10 @@ struct Renderer: MarkupVisitor {
             }
         }
         
-        return Result(imageRenderer.loadImage(provider, url: source, alt: alt))
+        //TODO: add cornerRadius customization outside
+        return Result(imageRenderer.loadImage(provider,
+                                         url: source,
+                                         alt: alt).cornerRadius(8))
     }
 }
 

@@ -54,7 +54,7 @@ public struct MarkdownView: View {
                 case .normal: representedView
                 case .editor:
                     representedView
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
                 }
             }
             .onAppear { scrollViewRef.proxy = scrollProxy }
