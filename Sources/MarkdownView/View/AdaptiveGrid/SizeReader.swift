@@ -49,9 +49,14 @@ fileprivate struct _SizeReaderModifier: ViewModifier {
             ._overlay {
                 GeometryReader { geometryProxy in
                     Color.clear
-                        ._task(id: geometryProxy.size) {
+                        .task(id: geometryProxy.size, priority: .userInitiated) {
                             size = geometryProxy.size
                         }
+                    //TODO: Causes retainment cycle
+//                    Color.clear
+//                        ._task(id: geometryProxy.size) {
+//                        size = geometryProxy.size
+//                    }
                 }
             }
     }
