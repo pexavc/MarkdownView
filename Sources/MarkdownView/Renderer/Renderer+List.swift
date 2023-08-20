@@ -45,6 +45,8 @@ extension Renderer {
             let depth = unorderedList.listDepth
             let handler = interactiveEditHandler
             let rawText = text
+            let bulletFont: Font = configuration.fontGroup.unorderedList
+            
             VStack(alignment: .leading, spacing: configuration.componentSpacing) {
                 ForEach(itemContent.indices, id: \.self) { index in
                     let listItem = listItems[index]
@@ -53,7 +55,7 @@ extension Renderer {
                             CheckboxView(listItem: listItem, text: rawText, handler: handler)
                         } else {
                             SwiftUI.Text("•")
-                                .font(.title2)
+                                .font(bulletFont)
                                 .fontWeight(.black)
                                 .padding(.leading, depth == 0 ? 12 : 0)
                         }

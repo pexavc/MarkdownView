@@ -10,6 +10,7 @@ public struct AnyMarkdownFontGroup {
     var _h6: Font
     var _codeBlock: Font
     var _blockQuote: Font
+    var _unorderedList: Font
     var _tableHeader: Font
     var _tableBody: Font
     var _body: Font
@@ -23,6 +24,7 @@ public struct AnyMarkdownFontGroup {
         _h6 = group.h6
         _codeBlock = group.codeBlock
         _blockQuote = group.blockQuote
+        _unorderedList = group.unorderedList
         _tableHeader = group.tableHeader
         _tableBody = group.tableBody
         _body = group.body
@@ -38,6 +40,7 @@ extension AnyMarkdownFontGroup: MarkdownFontGroup {
     public var h6: Font { _h6 }
     public var codeBlock: Font { _codeBlock }
     public var blockQuote: Font { _blockQuote }
+    public var unorderedList: Font { _unorderedList }
     public var tableHeader: Font { _tableHeader }
     public var tableBody: Font { _tableBody }
     public var body: Font { _body }

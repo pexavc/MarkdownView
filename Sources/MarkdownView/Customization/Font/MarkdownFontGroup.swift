@@ -19,6 +19,9 @@ public protocol MarkdownFontGroup {
     var codeBlock: Font { get }
     var blockQuote: Font { get }
     
+    // Bulleted
+    var unorderedList: Font { get }
+    
     // Tables
     var tableHeader: Font { get }
     var tableBody: Font { get }
@@ -38,6 +41,9 @@ extension MarkdownFontGroup {
     // Blocks
     public  var codeBlock: Font { Font.system(.callout, design: .monospaced) }
     public var blockQuote: Font { Font.system(.body, design: .serif) }
+    
+    // Bulleted
+    public var unorderedList: Font { Font.title2 }
     
     // Tables
     public var tableHeader: Font { Font.headline }
